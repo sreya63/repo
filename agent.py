@@ -46,10 +46,6 @@ def generate_fix(issue_text):
     return response.choices[0].message.content
 
 
-# def apply_fix(code):
-#     with open("repo/ai_fix.py", "w") as f:
-#         f.write(code)
-
 
 def create_commit(repo):
     print("Creating branch and commit...")
@@ -88,10 +84,6 @@ def main():
     repo = clone_repository()
 
     issues = run_pylint()
-
-    # fix_code = generate_fix(issues)
-
-    # apply_fix(fix_code)
 
     create_commit(repo)
 
